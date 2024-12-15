@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Menua</title>
+    <h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+<h:body>
+<div class="container">
+    <h:form>
+        <h1>Aukeratu</h1>
+        
+        <h:commandButton value="Saioa hasi" action="SaioaHasi.xhtml" styleClass="btn-login" />
+        <p> </p>
+        <h:commandButton value="Erregistratu" action="Erregistratu.xhtml" styleClass="btn-register" />
+        <p> </p>
+        <h:commandButton value="Bidaiak kontsultatu" action="QueryRide.xhtml" styleClass="btn-query" />
+        <p> </p>
+        <h:commandButton value="Hiri batetik ateratzen diren bidaiak" action="Proba.xhtml"  styleClass="btn-query" />
+     
+    </h:form>
+      </div>
+</h:body>
+</html>

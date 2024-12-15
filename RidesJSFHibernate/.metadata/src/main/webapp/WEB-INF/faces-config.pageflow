@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf17319271627880" configfile="/RidesJSFHibernate/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="createRides.xhtml" x="122" y="178" id="pf17321016365620" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" path="/createRides.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="queryRides.xhtml" x="122" y="562" id="pf17321016365622" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" path="/queryRides.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Main.xhtml" x="122" y="946" id="pf17321016365624" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf17328734236310 pf17328734236321" path="/Main.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="createRides.xhtml" x="338" y="754" id="pf17328734236324" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf17339993923172" inlinks="pf17328734236310" path="/CreateRide.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="queryRide.xhtml" x="338" y="1138" id="pf17328734236325" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf17339993923173" inlinks="pf17328734236321" path="/QueryRide.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Menua.xhtml" x="554" y="946" id="pf17339993923174" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf17339993923185" inlinks="pf17339993923172 pf17339993923173" path="/Menua.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Proba.xhtml" x="891" y="931" id="pf17339993923186" inlinks="pf17339993923185" path="/Proba.xhtml"/>
+  <links id="pf17328734236310" target="pf17328734236324" source="pf17321016365624" outcome="createRides"/>
+  <links id="pf17328734236321" target="pf17328734236325" source="pf17321016365624" outcome="queryRides"/>
+  <links id="pf17339993923172" target="pf17339993923174" source="pf17328734236324" outcome="back"/>
+  <links id="pf17339993923173" target="pf17339993923174" source="pf17328734236325" outcome="back"/>
+  <links id="pf17339993923185" target="pf17339993923186" source="pf17339993923174" outcome="joan"/>
+</pageflow:Pageflow>

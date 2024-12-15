@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+	<managed-bean>
+		<managed-bean-name>rideBean</managed-bean-name>
+		<managed-bean-class>eredua.bean.RideBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	 <managed-bean>
+        <managed-bean-name>queryBean</managed-bean-name>
+        <managed-bean-class>eredua.bean.QueryBean</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope> 
+    </managed-bean>
+	 <managed-bean>
+	 	<managed-bean-name>userBean</managed-bean-name>
+	 	<managed-bean-class>eredua.bean.UserBean</managed-bean-class>
+	 	<managed-bean-scope>session</managed-bean-scope>
+	 </managed-bean>
+	 <managed-bean>
+	 	<managed-bean-name>probaBean</managed-bean-name>
+	 	<managed-bean-class>eredua.bean.ProbaBean</managed-bean-class>
+	 	<managed-bean-scope>session</managed-bean-scope>
+	 </managed-bean>
+    
+	<navigation-rule>
+		<from-view-id>/Main.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>createRides</from-outcome>
+			<to-view-id>/CreateRide.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>queryRides</from-outcome>
+			<to-view-id>/QueryRide.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>createRides.xhtml</display-name>
+		<from-view-id>/CreateRide.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>back</from-outcome>
+			<to-view-id>/Menua.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>queryRide.xhtml</display-name>
+		<from-view-id>/QueryRide.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>back</from-outcome>
+			<to-view-id>/Menua.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+</faces-config>

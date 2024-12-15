@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Create Rides</title>
+	<h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+<h:body>
+	<h:form>
+		<table>
+
+			<tr>
+				<td><h:outputLabel for="origin" value="Irteera hiria:" /></td>
+				<td><h:inputText id="origin" value="#{rideBean.origin}"
+						required="true" requiredMessage="Irteera beharrezkoa da." /> <h:message
+						for="origin" style="color: red;" /></td>
+			</tr>
+
+			<tr>
+				<td><h:outputLabel for="destination" value="Helmuga hiria:" /></td>
+				<td><h:inputText id="destination"
+						value="#{rideBean.destination}" required="true"
+						requiredMessage="Helmuga beharrezkoa da." /> <h:message
+						for="destination" style="color: red;" /></td>
+			</tr>
+
+
+			<tr>
+				<td><h:outputLabel for="seats" value="Eserleku kopurua:" /></td>
+				<td><h:inputText id="seats" value="#{rideBean.seats}"
+						required="true" requiredMessage="Eserlekuak ipini behar dira." />
+					<h:message for="seats" style="color: red;" /></td>
+			</tr>
+
+
+			<tr>
+				<td><h:outputLabel for="price" value="Prezioa:" /></td>
+				<td><h:inputText id="price" value="#{rideBean.price}"
+						required="true" requiredMessage="Prezioa ipini behar da." /> <h:message
+						for="price" style="color: red;" /></td>
+			</tr>
+
+
+			<tr>
+				<td><h:outputLabel for="date" value="Ride Date:" /></td>
+				<td><p:calendar id="date" value="#{rideBean.date}"
+						required="true" requiredMessage="Data ipini behar da."
+						showButtonPanel="true" /> <h:message for="date"
+						style="color: red;" /></td>
+			</tr>
+
+
+			<tr>
+				<td colspan="2" style="text-align: center;"><h:commandButton
+						value="Bidaia sortu" action="#{rideBean.createRide}" styleClass="btn-create" /> <h:commandButton
+						value="Atzera" action="#{rideBean.back}" immediate="true" /></td>
+			</tr>
+		</table>
+		<h:panelGroup rendered="#{not empty rideBean.message}">
+            <h:outputText value="#{rideBean.message}" style="color: green; font-weight: bold;" />
+        </h:panelGroup>
+	</h:form>
+</h:body>
+</html>

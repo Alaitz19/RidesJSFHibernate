@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Query Rides</title>
+	<h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+<h:body>
+	
+	<div class="container">
+		<h3>Query Rides</h3>
+		<h:form>
+			<h:panelGrid  styleClass="input-table">
+				
+				<h:outputLabel value="Irteera hiria:" for="departCity" />
+				<h:selectOneMenu id="departCity" value="#{queryBean.departCity}"
+					required="true" requiredMessage="Irteera hiria beharrezkoa da.">
+					<f:selectItems value="#{queryBean.departCities}" />
+					<f:ajax listener="#{queryBean.updateArrivalCities}" render="arrivalCity" execute="@this" />
+				</h:selectOneMenu>
+				<h:message for="departCity" style="color: red;" />
+
+				<h:outputLabel value="Helmuga hiria:" for="arrivalCity" />
+				<h:selectOneMenu id="arrivalCity" value="#{queryBean.arrivalCity}"
+					required="true" requiredMessage="Helmuga hiria beharrezkoa da.">
+					<f:selectItems value="#{queryBean.arrivalCities}" />
+				</h:selectOneMenu>
+				<h:message for="arrivalCity" style="color: red;" />
+
+				<h:outputLabel value="Data:" for="date" />
+				<p:calendar id="date" value="#{queryBean.date}" showButtonPanel="true"
+					required="true" requiredMessage="Data beharrezkoa da." />
+				<h:message for="date" style="color: red;" />
+			</h:panelGrid>
+			<h:messages styleClass="error" />
+
+			<div style="margin-top: 15px;">
+				<h:commandButton value="Bilatu" for="Bilatu" action="#{queryBean.searchRides}" />
+				<h:commandButton value="Atzera" action="Menua.xhtml" immediate="true" />
+				
+				
+			</div>
+			
+
+
+			<h:panelGrid columns="1" cellpadding="5" styleClass="results-table">
+				<h:dataTable value="#{queryBean.rides}" var="ride" border="1" cellpadding="5" styleClass="ride-table">
+					<h:column>
+						<f:facet name="header">Gidaria</f:facet>
+						#{ride.driver.email}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Irteera</f:facet>
+						#{ride.from}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Helmuga</f:facet>
+						#{ride.to}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Data</f:facet>
+						#{ride.date}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Seats</f:facet>
+						#{ride.nPlaces}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Prezioa</f:facet>
+						#{ride.price}
+					</h:column>
+				</h:dataTable>
+			</h:panelGrid>
+		</h:form>
+	</div>
+</h:body>
+</html>

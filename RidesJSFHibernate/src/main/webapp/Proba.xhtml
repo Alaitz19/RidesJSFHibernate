@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Departure City Selection</title>
+     <h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:outputLabel value="Irteera Hiria:" for="departCity" />
+        <h:selectOneMenu id="departCity" value="#{probaBean.departCity}"
+                         required="true" requiredMessage="Irteera hiria beharrezkoa da.">
+            <f:selectItems value="#{probaBean.departCities}" />
+        </h:selectOneMenu>
+        <h:message for="departCity" style="color: red;" />
+        <p> </p>
+        <h:commandButton value="Bidaiak kontsultatu" action="#{probaBean.searchRides}" styleClass="btn-back" />
+         <h:commandButton value="Atzera" action="Menua?faces-redirect=true" />
+    </h:form>
+</h:body>
+
+</html>

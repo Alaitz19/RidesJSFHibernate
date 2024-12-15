@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+
+<h:head>
+    <title>Hiri baten bidai guztiak</title>
+     <h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+
+<h:body>
+    <h:form >
+      <h1>#{probaBean.departCity}-ko bidaiak</h1>
+        <h:dataTable value="#{probaBean.rides}" var="ride" border="1">
+            <h:column>
+                <f:facet name="header">Helmuga hiria</f:facet>
+                #{ride.to}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Gidaria</f:facet>
+                #{ride.driver.email}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Bidaiaren data</f:facet>
+                #{ride.date}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Prezioa</f:facet>
+                #{ride.price}
+            </h:column>
+        </h:dataTable>
+          <h:commandButton value="Atzera" action="Proba?faces-redirect=true" />
+    </h:form>
+</h:body>
+
+</html>

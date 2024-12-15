@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Saioa hasi</title>
+    <h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+
+<h:body>
+<div class="container">
+    <h:form>
+        <h3>Saioa hasi</h3>
+
+        <h:outputLabel for="email" value="Emaila:" />
+        <h:inputText id="email" value="#{userBean.email}" required="true" />
+        <br /><br />
+
+        <h:outputLabel for="password" value="Pasahitza:" />
+        <h:inputSecret id="password" value="#{userBean.password}" required="true" />
+        <br /><br />
+
+        <h:commandButton value="Saioa hasi" action="#{userBean.login}" styleClass="btn-login" />
+        <br /><br />
+
+       
+        <h:commandButton value="Atzera" action="Menua.xhtml" immediate="true" styleClass="btn-back" />
+        <h:messages styleClass="message" />
+    </h:form>
+</div>
+</h:body>
+</html>
