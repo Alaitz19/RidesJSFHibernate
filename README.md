@@ -36,6 +36,8 @@ Proiektua martxan jartzeko, honako hauek instalatuta eduki behar dituzu:
    </session-factory>
 </hibernate-configuration>
 ```
+### 3. Datu basean datuak txertatzea
+Datu batzuk txertatu nahi badituzu aplikazioa probatu ahal izateko src/main/java/eredua/nagusia dagoen GertaerakDataAccess.java java aplikazio bezala exekutatu behar da.
 ## Egilea
 Alaitz Shan Ye
 
